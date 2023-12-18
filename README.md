@@ -1,10 +1,5 @@
 # GraphQL Java Server with PostgreSQL
 
-
-
-This is the source code for the "Getting started with GraphQL Java and Spring Boot" which is available here: https://www.graphql-java.com/tutorials/getting-started-with-spring-boot/
-
-
 This demo provides an overview of a GraphQL Java server built using the graphql-java library and connected to the Chinook database on PostgreSQL.
 
 Features:
@@ -15,12 +10,13 @@ Features:
 
 Technology Stack:
 
-Java 21
-Spring Boot
-graphql-java
-graphql-servlet
-PostgreSQL
-chinook-database (optional)
+* Java 21
+* Gradle (maven is another option)
+* Spring Boot
+* graphql-java
+* graphql-servlet
+* PostgreSQL
+* chinook-database (optional)
 
 
 Getting Started:
@@ -34,35 +30,39 @@ Getting Started:
 
 Build and Run:
 
-Run mvn clean package or gradle clean build.
-Run the application with java -jar target/graphql-java-postgres-chinook.jar.
+* Run 'gradle build' and then 'gradle bootRun'.
+
 Access the GraphQL API:
-Use a GraphQL client like GraphiQL or Altair.
-The server endpoint is available at http://localhost:8080/graphql.
+* The server endpoint is available at http://localhost:8080/graphql.
+
 Data:
 
-Initially, the server uses static data from the tutorial.
-To connect to PostgreSQL and access Chinook data:
-Update the application.properties file with your PostgreSQL connection details.
-Uncomment the @EnableJpaRepositories annotation in Application.java.
-Ensure you have the chinook-database file in the correct location.
+* Initially, the server uses static data from the tutorial.
+* To connect to PostgreSQL and access Chinook data:
+* Update the application.properties file with your PostgreSQL connection details.
+* Uncomment the @EnableJpaRepositories annotation in Application.java.
+* Ensure you have the chinook-database file in the correct location.
 
 N+1 Query Problem:
 
-The tutorial example demonstrates potential N+1 queries.
-Implement proper data fetching logic in resolvers to avoid N+1 queries.
-Refer to GraphQL Java documentation and best practices for efficient data retrieval.
+* The tutorial example demonstrates potential N+1 query problem.
+* Implement proper data fetching logic in resolvers to avoid N+1 queries.
+* Trying a solution like Hasura which handles N+1 queries is a great way to resolve this.
 
 Contributing:
 
-Feel free to fork the repository and contribute your improvements.
-Raise issues and pull requests for any bugs or suggestions.
+* Feel free to fork the repository and contribute your improvements.
+* Raise issues and pull requests for any bugs or suggestions.
+
 Resources:
 
-GraphQL Java: https://graphql-java.com/
-Spring Boot: https://spring.io/projects/spring-boot
-graphql-servlet: https://github.com/graphql-java-kickstart/graphql-java-servlet
-PostgreSQL: https://www.postgresql.org/
-chinook-database: https://github.com/topics/chinook-database
+* GraphQL Java: https://graphql-java.com/
+* Spring Boot: https://spring.io/projects/spring-boot
+* graphql-servlet: https://github.com/graphql-java-kickstart/graphql-java-servlet
+* PostgreSQL: https://www.postgresql.org/
+* Chinook PostgreSQL database: https://github.com/lerocha/chinook-database/blob/master/ChinookDatabase/DataSources/Chinook_PostgreSql.sql
+
 Enjoy exploring and building your own GraphQL Java server with PostgreSQL!
+
+Make sure to try out Hasura to build it much faster!
 
