@@ -30,10 +30,24 @@ Getting Started:
 
 Build and Run:
 
-* Run 'gradle build' and then 'gradle bootRun'.
+* Start docker demon and then initialise a container:
+ 'docker run -e POSTGRES_PASSWORD=example postgres'
 
-Access the GraphQL API:
-* The server endpoint is available at http://localhost:8080/graphql.
+* Copy chinook database to the container:
+ 'docker cp /path/to/chinook/sql/file <container_id>:/'
+
+* Enter PostgreSQL command line with the user:
+ 'psql -U postgres'
+
+* Create 'chinook' database:
+ 'CREATE DATABASE chinook'
+
+* Load sql data from file:
+ '\c chinook'
+ '\i /path/to/sql/file' 
+
+* Run 'gradle build' and then 'gradle bootRun'.
+* Access the GraphQL API server endpoint available at http://localhost:8080/graphql.
 
 Data:
 
